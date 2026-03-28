@@ -39,14 +39,16 @@ This repository currently ships:
 
 - Codex integration files
 - core philosophy and workflow docs
-- six foundational skills:
+- eight foundational skills:
   - `using-paperpowers`
   - `research-brainstorming`
   - `literature-grounding`
   - `hypothesis-to-validation`
   - `paper-planning`
+  - `paper-writing`
+  - `rebuttal-prep`
   - `research-verification`
-- reserved directories for the remaining V1 skills
+- a reserved directory for the remaining V1 meta-skill
 
 ## Planned V1 Skills
 
@@ -88,4 +90,4 @@ paperpowers/
 
 ## Status
 
-The repository is in its scaffold milestone. The current version already implements the front-half workflow for idea shaping, literature grounding, minimum-cost validation planning, and paper planning, while the remaining V1 skills are still being filled in.
+The repository is in its scaffold milestone. The current version already implements the core user-facing V1 workflow from idea shaping through literature grounding, minimum-cost validation planning, paper planning, section drafting, and rebuttal preparation, while the internal meta-skill `writing-skills` is still reserved for a later pass.
