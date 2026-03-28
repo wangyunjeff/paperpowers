@@ -8,10 +8,10 @@ Enable `paperpowers` skills in Codex through native skill discovery.
 
 ## Installation
 
-1. Clone this repository:
+1. Clone this repository into your Codex directory:
 
    ```bash
-   git clone <REPO_URL> ~/.codex/paperpowers
+   git clone /Users/wangyunjeff/0_CODE/paperpowers ~/.codex/paperpowers
    ```
 
 2. Create the skills symlink:
@@ -30,3 +30,5 @@ ls -la ~/.agents/skills/paperpowers
 ```
 
 You should see a symlink pointing to the repository's `skills` directory.
+
+If you later publish this repository to GitHub, replace the local source path with the hosted repository URL.
