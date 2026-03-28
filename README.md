@@ -39,9 +39,12 @@ This repository currently ships:
 
 - Codex integration files
 - core philosophy and workflow docs
-- three foundational skills:
+- six foundational skills:
   - `using-paperpowers`
   - `research-brainstorming`
+  - `literature-grounding`
+  - `hypothesis-to-validation`
+  - `paper-planning`
   - `research-verification`
 - reserved directories for the remaining V1 skills
 
@@ -85,4 +88,4 @@ paperpowers/
 
 ## Status
 
-The repository is in its first scaffold milestone. The goal of this milestone is to produce a usable foundation rather than a complete research operating system.
+The repository is in its scaffold milestone. The current version already implements the front-half workflow for idea shaping, literature grounding, minimum-cost validation planning, and paper planning, while the remaining V1 skills are still being filled in.
