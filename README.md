@@ -140,6 +140,27 @@ Seventh, autonomy should be paired with periodic communication. A strong experim
 
 In short, the experiment layer in `paperpowers` should eventually become a bridge between research judgment and empirical execution: not just "run more experiments", but "run the right experiments, under controlled conditions, with memory, synthesis, and a path to paper-level understanding." This is still a design direction, not a completed feature in the current scaffold.
 
+### Possible Future Experiment Skills
+
+The philosophy above also suggests a set of possible future skills. These are not implemented yet, and they are not a frozen roadmap, but they make the intended experiment layer more concrete:
+
+- `experiment-orchestration`
+  Decide which hypothesis to test next, what evidence would be decisive, and whether the next step should be a new run, an ablation, a rollback, or a pivot.
+- `experiment-inner-loop`
+  Run short, bounded, comparable experiment cycles under a fixed budget, with explicit metrics and stop conditions.
+- `experiment-monitoring`
+  Watch long-running jobs, surface failures early, summarize checkpoints, and decide when a run should continue or be terminated.
+- `experiment-memory`
+  Maintain structured state for hypotheses, tried variants, confirmed findings, rejected directions, and experiment trajectories.
+- `results-synthesis`
+  Turn a collection of runs into patterns, failure analyses, negative-result summaries, and next-step recommendations.
+- `benchmark-discipline`
+  Enforce fair comparisons, stable evaluation settings, and explicit reporting of what changed between runs.
+- `claim-to-evidence`
+  Connect experiment results back to the paper story, updating the claim-evidence matrix instead of treating experiments and writing as separate worlds.
+
+Taken together, these possible skills point toward an experiment layer that is not just about execution, but about disciplined iteration, memory, comparability, and scientific interpretation.
+
 See [`docs/philosophy.md`](docs/philosophy.md) and [`docs/workflows/v1.md`](docs/workflows/v1.md).
 
 ## Repository Layout

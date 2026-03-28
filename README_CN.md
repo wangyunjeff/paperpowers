@@ -139,6 +139,27 @@ Paperpowers 的核心倾向是：
 
 简而言之，`paperpowers` 未来的实验层目标不是“多跑实验”本身，而是“在受控条件下跑对实验，并且把这些实验沉淀成记忆、综合和最终能进入论文叙事的理解”。这仍然是一个设计方向，而不是当前 scaffold 已经完成的能力。
 
+### 未来可能的实验层 Skills
+
+上面的设计哲学，也可以进一步落成一组未来可能出现的 skills。它们现在都还没有实现，也不是已经冻结的路线图，但能让实验层的目标更具体一些：
+
+- `experiment-orchestration`
+  决定下一步该测试什么假设、什么证据算 decisive，以及下一步应该是新实验、ablation、回退还是 pivot。
+- `experiment-inner-loop`
+  在固定预算下运行短、小、可比较的实验循环，并明确 metric 与 stop condition。
+- `experiment-monitoring`
+  监控长时间运行的任务，尽早暴露失败，汇总关键 checkpoint，并判断一个 run 应该继续还是终止。
+- `experiment-memory`
+  维护结构化研究状态，包括假设、尝试过的变体、确认的发现、被排除的方向，以及实验轨迹。
+- `results-synthesis`
+  把一组实验结果整理成模式总结、失败分析、negative-result 摘要，以及下一步建议。
+- `benchmark-discipline`
+  约束公平比较、稳定评测设置，并显式记录不同 run 之间到底改了什么。
+- `claim-to-evidence`
+  把实验结果重新接回论文叙事和 claim-evidence matrix，而不是让实验和写作变成两套割裂的系统。
+
+这些可能的 skills 合在一起，指向的并不是一个只会“跑实验”的层，而是一个强调纪律、记忆、可比性和科学解释的实验层。
+
 更多可见 [`docs/philosophy.md`](docs/philosophy.md) 和 [`docs/workflows/v1.md`](docs/workflows/v1.md)。
 
 ## 仓库结构
