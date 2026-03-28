@@ -90,6 +90,31 @@ Paperpowers optimizes for:
 - narrative clarity before polished prose
 - explicit claim-risk awareness
 
+### Personal Design Philosophy
+
+This project also follows a more personal design philosophy about research ideation and literature work.
+
+First, brainstorming is not only about collecting papers. Literature review is necessary, but the style of thinking matters just as much. One of the references behind this direction is the ideation track in [Orchestra Research's AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs/tree/main/21-research-ideation), especially the split between `brainstorming-research-ideas` and `creative-thinking-for-research`.
+
+Second, brainstorming should eventually be split by scenario instead of treated as a single generic mode. Different situations need different balances between divergence, convergence, feasibility, and literature depth. Examples include:
+
+- **Paradigm-shift exploration in a crowded field**: when a research area has already entered the "last 1-2% improvement" stage and incremental gains are no longer exciting, the system should bias toward more divergent thinking and possible new paradigms. This mode is closer to `creative-thinking-for-research`.
+- **Convergent, actionable idea formation**: when the goal is a realistic, defensible, and implementable plan, the system should bias toward narrowing, decision-making, and practical research design. This mode is closer to `brainstorming-research-ideas`.
+- **Safe idea generation for students**: sometimes the goal is not the boldest idea, but a set of solid, teachable, low-risk directions that students can actually execute well.
+- **Feasibility discussion mode**: sometimes the user does not primarily need a final idea at all, but rather material for a group meeting, proposal discussion, or a conversation with an advisor about whether a plan is viable.
+
+Third, different scenarios should demand different amounts of brainstorming and literature grounding. Some situations require wide exploration before committing. Others require fast convergence with only the minimum necessary literature map. The workflow should adapt instead of forcing the same ideation depth every time.
+
+Fourth, personalization should matter. The system should ideally know the researcher's own history and preferences before doing brainstorming or literature search. A future version should be able to read from a local folder that ranks:
+
+- papers the researcher has published
+- papers the researcher has studied carefully
+- papers the researcher is interested in
+
+That personal library should influence search and grounding priority. In addition, venue quality should matter: top conference papers should usually receive higher search weight than unreviewed arXiv papers unless the task explicitly calls for frontier preprints.
+
+This philosophy is a design target for future `paperpowers` evolution. It is not fully implemented in the current scaffold, but it defines the direction the project is intended to grow toward.
+
 See [`docs/philosophy.md`](docs/philosophy.md) and [`docs/workflows/v1.md`](docs/workflows/v1.md).
 
 ## Repository Layout
