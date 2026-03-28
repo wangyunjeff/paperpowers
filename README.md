@@ -1,3 +1,5 @@
+**English** | [简体中文](README_CN.md)
+
 # Paperpowers
 
 Paperpowers is a research workflow system for coding agents.
