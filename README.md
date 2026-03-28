@@ -138,6 +138,13 @@ Sixth, simplicity should remain a first-class value. If a change slightly improv
 
 Seventh, autonomy should be paired with periodic communication. A strong experiment layer should be able to keep running without constant user intervention, while still producing progress reports, trajectories, and interpretable updates so the human can step in when needed.
 
+Eighth, the experiment layer should probably support **two parallel surfaces**:
+
+- a path that stays readable and editable for humans, so researchers can inspect code, debug failures, and make manual changes with confidence
+- a path that is optimized for agents, likely with a tighter CLI-oriented interface that is easier for AI to read, modify, and extend reliably
+
+This comes from a practical observation: fully autonomous experimentation is uneven. Sometimes an agent behaves like an outstanding PhD researcher; sometimes it makes surprisingly low-level mistakes. In practice, agents become much more effective once they inherit a **verified prototype experiment**. A human-readable baseline gives the researcher something trustworthy to inspect and debug, while an AI-oriented execution surface gives the agent a constrained environment for fast improvement and extension.
+
 In short, the experiment layer in `paperpowers` should eventually become a bridge between research judgment and empirical execution: not just "run more experiments", but "run the right experiments, under controlled conditions, with memory, synthesis, and a path to paper-level understanding." This is still a design direction, not a completed feature in the current scaffold.
 
 ### Possible Future Experiment Skills
