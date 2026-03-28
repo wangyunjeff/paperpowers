@@ -116,6 +116,29 @@ Paperpowers 的核心倾向是：
 
 这套哲学是 `paperpowers` 后续演进的设计目标，目前还没有在 scaffold 中完整实现，但它定义了这个项目希望成长的方向。
 
+### 实验层设计哲学
+
+对于未来的实验层设计，我当前主要参考了两个项目：[Orchestra Research 的 `autoresearch` skill](https://github.com/Orchestra-Research/AI-Research-SKILLs/tree/main/0-autoresearch-skill) 和 [Karpathy 的 `autoresearch`](https://github.com/karpathy/autoresearch)。它们背后有一套值得显式写出来的设计哲学。
+
+第一，实验执行不应该被看成一堆互相割裂的 runs，而应该被组织成一个有记忆、有方向、有判断的研究循环。一个很好的抽象是把实验层拆成：
+
+- **内循环**：负责快速、受约束的实验迭代，有明确 metric 或 hypothesis test
+- **外循环**：负责综合、反思、归纳模式、决定是否 pivot
+
+第二，实验层应该优先支持**低成本、可比较的快速迭代**。Karpathy 的项目在这一点上特别清楚：实验环境要尽量小，优化目标要明确，可编辑面要窄，最好还有固定预算，这样不同 run 才能公平比较。未来 `paperpowers` 的实验层即使会扩展到更通用的环境，也应该保留这种精神。
+
+第三，实验 orchestration 和具体 domain execution 应该分离。orchestration 层负责决定测试什么假设、看什么指标、什么时候 pivot、什么时候 conclude；而具体的训练、评估、绘图、基础设施等实现细节，应该交给 domain-specific skills 或工具处理。
+
+第四，结构化项目记忆非常重要。单纯的 experiment logs 不够。一个好的研究循环还需要显式 state、trajectory tracking、synthesized findings，以及“我们学到了什么”的记录，而不只是“我们跑了什么”。这既关系到 agent 的持续自治，也关系到人类是否能真正理解研究进展。
+
+第五，negative results 应该被视为真实的研究进展。实验层应该保留哪些方向被排除了，区分 confirmatory 和 exploratory findings，并且尽量避免 agent 在未来重复已经失败过的路线。
+
+第六，simplicity 应该是一级价值。如果某个改动只带来很小的提升，却引入了明显更高的复杂度，这种 tradeoff 应该被显式看见。未来系统不应该只会追指标，也应该能判断这个 gain 是否真的值得新增的 machinery。
+
+第七，自主性要和周期性沟通配对。一个强的实验层应该能在没有持续人工干预的情况下继续推进，同时仍然能不断产出 progress reports、trajectory 和可解释的更新，让人类在需要时介入。
+
+简而言之，`paperpowers` 未来的实验层目标不是“多跑实验”本身，而是“在受控条件下跑对实验，并且把这些实验沉淀成记忆、综合和最终能进入论文叙事的理解”。这仍然是一个设计方向，而不是当前 scaffold 已经完成的能力。
+
 更多可见 [`docs/philosophy.md`](docs/philosophy.md) 和 [`docs/workflows/v1.md`](docs/workflows/v1.md)。
 
 ## 仓库结构

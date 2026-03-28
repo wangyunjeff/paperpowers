@@ -117,6 +117,29 @@ That personal library should influence search and grounding priority. In additio
 
 This philosophy is a design target for future `paperpowers` evolution. It is not fully implemented in the current scaffold, but it defines the direction the project is intended to grow toward.
 
+### Experiment-Layer Design Philosophy
+
+For the future experiment layer, two important references are [Orchestra Research's `autoresearch` skill](https://github.com/Orchestra-Research/AI-Research-SKILLs/tree/main/0-autoresearch-skill) and [Karpathy's `autoresearch`](https://github.com/karpathy/autoresearch). They suggest a philosophy that is worth making explicit here.
+
+First, experiment execution should not be treated as a bag of disconnected runs. It should be an organized research loop with memory, direction, and judgment. A useful design is to separate:
+
+- an **inner loop** for fast, bounded experiments with a clear metric or hypothesis test
+- an **outer loop** for synthesis, reflection, pattern-finding, and direction changes
+
+Second, the experiment layer should optimize for **cheap, comparable iteration**. Karpathy's project is especially strong on this point: keep the setup small, keep the optimization target clear, keep the editable surface narrow, and use a fixed budget whenever possible so runs can be compared fairly. The future `paperpowers` experiment layer should inherit that spirit even if the exact execution environment becomes more general.
+
+Third, experiment orchestration and domain execution should be separated. The orchestration layer should decide what hypothesis to test, what to measure, when to pivot, and when to conclude. Domain-specific skills or tools should handle the actual implementation details of training, evaluation, plotting, or infrastructure.
+
+Fourth, structured project memory matters. Experiment logs alone are not enough. A good research loop needs explicit state, trajectory tracking, synthesized findings, and records of what was learned, not just what was run. This is important both for autonomous continuation and for human interpretability.
+
+Fifth, negative results should be treated as real research progress. The experiment layer should preserve what was ruled out, distinguish confirmatory from exploratory findings, and make it easy to avoid repeating failed directions.
+
+Sixth, simplicity should remain a first-class value. If a change slightly improves a metric but adds disproportionate complexity, that tradeoff should be visible. The future system should not only chase improvement; it should reason about whether the gain is actually worth the added machinery.
+
+Seventh, autonomy should be paired with periodic communication. A strong experiment layer should be able to keep running without constant user intervention, while still producing progress reports, trajectories, and interpretable updates so the human can step in when needed.
+
+In short, the experiment layer in `paperpowers` should eventually become a bridge between research judgment and empirical execution: not just "run more experiments", but "run the right experiments, under controlled conditions, with memory, synthesis, and a path to paper-level understanding." This is still a design direction, not a completed feature in the current scaffold.
+
 See [`docs/philosophy.md`](docs/philosophy.md) and [`docs/workflows/v1.md`](docs/workflows/v1.md).
 
 ## Repository Layout
