@@ -1,7 +1,7 @@
 **English** | [简体中文](README_CN.md)
 
 # Paperpowers
-
+写论文和写代码不一样, 写论文重活在想, 提前安排好文章每个部分的蓝图, 越细节越好, 干的活反而比较轻松.
 Paperpowers is a research workflow system for coding agents.
 
 It plays the role for `AI/CS empirical research` that `superpowers` plays for software development: it combines initial instructions, reusable skills, and a fixed workflow so agents behave like disciplined research partners instead of fast but sloppy assistants.
